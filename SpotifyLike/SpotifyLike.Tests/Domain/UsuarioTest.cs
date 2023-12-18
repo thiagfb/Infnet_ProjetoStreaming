@@ -80,7 +80,6 @@ namespace SpotifyLike.Tests.Domain
                 Usuario usuario = new Usuario();
                 usuario.CriarConta(nome, email, senha, DateTime.Now, plano, cartao);
             });
-
         }
     }
 }

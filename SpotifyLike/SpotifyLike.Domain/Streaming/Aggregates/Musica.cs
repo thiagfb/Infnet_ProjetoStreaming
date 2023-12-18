@@ -1,4 +1,5 @@
-﻿using SpotifyLike.Domain.Streaming.ValueObject;
+﻿using SpotifyLike.Domain.Conta.Agreggates;
+using SpotifyLike.Domain.Streaming.ValueObject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,5 +19,7 @@ namespace SpotifyLike.Domain.Streaming.Aggregates
         /// A classe Duracao então irá fazer a conversão de minutos para segundos.
         /// </summary>
         public Duracao Duracao { get; set; }
+
+        public List<Playlist> Playlists { get; set; } = new List<Playlist>();
     }
 }
