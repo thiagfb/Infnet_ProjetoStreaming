@@ -33,6 +33,8 @@ namespace SpotifyLike.Repository
             base.OnModelCreating(modelBuilder);
         }
 
+        
+        //Irá gerar o log durante a execução.
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseLoggerFactory(LoggerFactory.Create(x => x.AddConsole()));
