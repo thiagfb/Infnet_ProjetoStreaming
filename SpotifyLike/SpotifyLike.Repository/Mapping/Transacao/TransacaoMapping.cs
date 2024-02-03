@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using SpotifyLike.Domain.Core.ValueObject;
 using SpotifyLike.Domain.Transacao.Agreggates;
 using SpotifyLike.Domain.Transacao.ValueObject;
 using System;
@@ -26,6 +27,10 @@ namespace SpotifyLike.Repository.Mapping.Transacao
                 c.Property(x => x.Nome).HasColumnName("MerchantNome").IsRequired();
             });
 
+            builder.OwnsOne<Monetario>(d => d.Valor, c =>
+            {
+                c.Property(x => x.Valor).HasColumnName("ValorTransacao").IsRequired();
+            });
         }
     }
 }
