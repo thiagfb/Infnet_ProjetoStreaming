@@ -6,26 +6,27 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace Spotify.Application.Conta.Request
+namespace Spotify.Application.Conta.Dto
 {
     public class UsuarioDto
     {
         public Guid Id { get; set; }
 
         [Required]
-        public String Nome { get; set; }
-        
+        public string Nome { get; set; }
+
         [Required]
-        public String Email { get; set; }
-        
+        [EmailAddress]
+        public string Email { get; set; }
+
         [Required]
-        [JsonIgnore()]
-        public String Senha { get; set; }
-        
+        public string Senha { get; set; }
+
         [Required]
         public DateTime DtNascimento { get; set; }
-        
+
         public Guid PlanoId { get; set; }
+
 
         [Required]
         public CartaoDto Cartao { get; set; }

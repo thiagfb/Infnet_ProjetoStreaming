@@ -1,14 +1,9 @@
 ﻿using AutoMapper;
-using Spotify.Application.Conta.Request;
+using Spotify.Application.Conta.Dto;
 using SpotifyLike.Domain.Conta.Agreggates;
 using SpotifyLike.Domain.Streaming.Aggregates;
 using SpotifyLike.Domain.Transacao.Agreggates;
 using SpotifyLike.Repository.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Spotify.Application.Conta
 {

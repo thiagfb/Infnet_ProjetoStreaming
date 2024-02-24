@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Spotify.Application.Conta;
-using Spotify.Application.Conta.Request;
+using Spotify.Application.Conta.Dto;
+using SpotifyLike.Domain.Conta.Agreggates;
 
 namespace SpotifyLike.API.Controllers
 {
@@ -25,8 +26,8 @@ namespace SpotifyLike.API.Controllers
             var result = this._usuarioService.Criar(dto);
 
             return Ok(result);
-
         }
+
 
         [HttpGet("{id}")]
         public IActionResult Obter(Guid id)
@@ -37,6 +38,8 @@ namespace SpotifyLike.API.Controllers
                 return NotFound();
 
             return Ok(result);
+
         }
+
     }
 }

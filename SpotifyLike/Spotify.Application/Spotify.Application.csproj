@@ -16,7 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Streaming\Dto\" />
     <Folder Include="Streaming\Profile\" />
   </ItemGroup>
 

@@ -1,4 +1,4 @@
-﻿using Spotify.Application.Conta.Request;
+﻿using Spotify.Application.Conta.Dto;
 using SpotifyLike.Domain.Conta.Agreggates;
 using SpotifyLike.Domain.Transacao.Agreggates;
 
@@ -8,15 +8,19 @@ namespace Spotify.Application.Conta.Profile
     {
         public UsuarioProfile()
         {
-            CreateMap<UsuarioDto, Usuario>()
-                .AfterMap((s, d) =>
-                {
-                    var plano = d.Assinaturas?.FirstOrDefault(a => a.Ativo)?.Plano;
+            CreateMap<UsuarioDto, Usuario>();
 
-                    if (plano != null)
-                        s.PlanoId = plano.Id;
-                })
-                .ReverseMap();
+            CreateMap<Usuario, UsuarioDto>()
+            .AfterMap((s, d) =>
+            {
+                var plano = s.Assinaturas?.FirstOrDefault(a => a.Ativo)?.Plano;
+
+                if (plano != null)
+                    d.PlanoId = plano.Id;
+
+                //Irá retornar mascarado
+                d.Senha = "xxxxxxxx";
+            });
 
             //Mapeamento entre o cartão DTO e o Cartao do Domain
             //Formember é a transformação do campo Limite de Monetario para Decimal
