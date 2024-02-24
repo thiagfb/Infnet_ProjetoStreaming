@@ -47,5 +47,13 @@ namespace Spotify.Application.Conta
 
             return result;
         }
+
+        public UsuarioDto Obter(Guid id)
+        {
+            var usuario = this.UsuarioRepository.GetById(id);
+            var result = this.Mapper.Map<UsuarioDto>(usuario);
+
+            return result;
+        }
     }
 }

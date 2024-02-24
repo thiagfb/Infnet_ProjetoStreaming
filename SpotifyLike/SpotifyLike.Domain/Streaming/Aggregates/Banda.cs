@@ -16,7 +16,7 @@ namespace SpotifyLike.Domain.Streaming.Aggregates
 
         public String Backdrop { get; set; }
 
-        public List<Album> Albums { get; set; } = new List<Album>();
+        public virtual IList<Album> Albums { get; set; } = new List<Album>();
 
         public void AdicionarAlbum(Album album) => this.Albums.Add(album);
 

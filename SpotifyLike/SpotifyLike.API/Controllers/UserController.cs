@@ -24,8 +24,18 @@ namespace SpotifyLike.API.Controllers
 
             var result = this._usuarioService.Criar(dto);
 
-            return Ok();
+            return Ok(result);
 
+        }
+
+        public IActionResult Obter(Guid id)
+        {
+            var result = this._usuarioService.Obter(id);
+
+            if (result == null)
+                return NotFound();
+
+            return Ok(result);
         }
     }
 }

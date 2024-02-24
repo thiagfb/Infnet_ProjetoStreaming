@@ -15,7 +15,8 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<SpotifyLikeContext>(c =>
 {
-    c.UseSqlServer(builder.Configuration.GetConnectionString("SpotifyConnection"));
+    c.UseLazyLoadingProxies() //Ao incluir UseLazyLoadingProxies todo relacionamento tem que ser virtual e o List virá IList 
+    .UseSqlServer(builder.Configuration.GetConnectionString("SpotifyConnection"));
 });
 
 //Todos arquivos do UsuarioProfille
