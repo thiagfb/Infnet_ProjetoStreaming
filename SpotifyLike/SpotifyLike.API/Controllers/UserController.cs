@@ -28,6 +28,7 @@ namespace SpotifyLike.API.Controllers
 
         }
 
+        [HttpGet("{id}")]
         public IActionResult Obter(Guid id)
         {
             var result = this._usuarioService.Obter(id);

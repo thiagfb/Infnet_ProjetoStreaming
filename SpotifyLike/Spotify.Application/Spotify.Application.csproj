@@ -15,4 +15,9 @@
     <ProjectReference Include="..\SpotifyLike.Repository\SpotifyLike.Repository.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Streaming\Dto\" />
+    <Folder Include="Streaming\Profile\" />
+  </ItemGroup>
+
 </Project>
