@@ -18,9 +18,10 @@ namespace Spotify.Application.Conta.Profile
 
             //Mapeamento entre o cartão DTO e o Cartao do Domain
             //Formember é a transformação do campo Limite de Monetario para Decimal
+            //Usando o ReverseMap é o mesmo mapeamento usado do usuário.
             CreateMap<CartaoDto, Cartao>()
-                .ForMember(x => x.Limite, m => m.MapFrom(f => f.Limite));
-            CreateMap<Cartao, CartaoDto>();
+                .ForMember(x => x.Limite, m => m.MapFrom(f => f.Limite))
+                .ReverseMap();
         }
     }
 }
