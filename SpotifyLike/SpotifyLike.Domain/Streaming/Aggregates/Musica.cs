@@ -18,8 +18,8 @@ namespace SpotifyLike.Domain.Streaming.Aggregates
         /// A música tem duração de minutos ou segundos? 1 minuto é igual a 60 segundos.
         /// A classe Duracao então irá fazer a conversão de minutos para segundos.
         /// </summary>
-        public Duracao Duracao { get; set; }
+        public virtual Duracao Duracao { get; set; }
 
-        public List<Playlist> Playlists { get; set; } = new List<Playlist>();
+        public virtual IList<Playlist> Playlists { get; set; } = new List<Playlist>();
     }
 }
