@@ -1,0 +1,23 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "test",
+			"path": "MusicApp",
+			"group": "test",
+			"problemMatcher": [],
+			"label": "npm: test - MusicApp",
+			"detail": "ng test"
+		},
+		{
+			"type": "npm",
+			"script": "install",
+			"path": "MusicApp",
+			"group": "clean",
+			"problemMatcher": [],
+			"label": "npm: install - MusicApp",
+			"detail": "install dependencies from package"
+		}
+	]
+}
